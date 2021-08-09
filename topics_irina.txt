@@ -1,0 +1,18 @@
+1. Advanced functions 
+    1. Context vs scope (scope chain / this keyword) 
+    2. call(), apply(), bind()
+    3. IIFE 
+    4.  Hoisting
+2. Higher Order Functions (map, reduce, filter) 
+3. Closures
+4. OOP 
+    1. Principles
+    2. ES6 Classes
+    3. Inheritance
+    4. Composition vs Inheritance
+5. Functional programming
+    1. Pure vs impure functions
+    2. Composable functions 
+6. Modules in Javascript
+    1. CommonJS
+    2. ES6 Modules

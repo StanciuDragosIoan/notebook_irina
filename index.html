@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/main2.css" type="text/css" />
+    <title>Notebook Irina :X</title>
+  </head>
+
+  <body>
+    <h1 class="header">Notebook Irina :X</h1>
+
+    <input
+      oninput="filter()"
+      class="search"
+      type="text"
+      placeholder="search stuff &#128526;"
+    />
+    <div class="note">
+      <p class="text center bold">Object Oriented Programming - the basics</p>
+      <p class="text">
+        <span class="snippet">Object Oriented Programming</span> (OOP) is one of
+        the most well-knowns <span class="snippet">programming paradigms</span>.
+        It is so well known, that you have undoubtedly encountered it. As well
+        known as it is, it can quickly become over complicated, so for a
+        high-level view we will simply say that
+        <span class="snippet">OOP</span> revolves around the idea of using
+        <span class="snippet">objects</span> to
+        <span class="snippet">model</span> real world things that we want to use
+        in our programs.
+      </p>
+
+      <p class="text">
+        Objects contain related data and functionality for our object. For
+        instance if we want it to do certain things, our object will contain
+        some methods for that. On the other hand if we want our object to store
+        data, we will need to define data onto them. Objects therefore
+        <span class="snippet">encapsulate</span> functionality and allow us to
+        better structure and re-use that functionality throughout our
+        applications.
+      </p>
+    </div>
+
+    <div class="note">
+      <p class="text center bold">
+        Object Oriented Programming - defining an object blueprint
+      </p>
+      <p class="text">
+        Let's consider a simple program that displays the users in a game.
+        Beside users, it will also display game masters. Both users and game
+        masters are types of 'persons' so a good first step, would be to define
+        a Person class first. A person class representation would look like
+        this:
+      </p>
+
+      <pre class="code">
+        //pseudo-code class Person
+        Name[firstName, lastName]
+        Age
+        Hobbies: []
+        Greeting: {'Hello, I am a [Name] and my hobbies are [Hobbies]'}
+      </pre>
+    </div>
+
+    <div class="note">
+      <p class="text center bold">
+        Object Oriented Programming - Creating actual objects from the blueprint
+      </p>
+      <p class="text">
+        Now that we have a class created, we can
+        <span class="snippet">instantiate</span> it, so we can create objects
+        from it. These objects contain data and functionality defined in the
+        class. Going back to our previous representation, we can create objects
+        like this:
+      </p>
+      <pre class="code">
+        //pseudo-code class Person
+        Name[firstName, lastName]
+        Age
+        Hobbies: []
+        Greeting: {'Hello, I am a [Name] and my hobbies are [Hobbies]'}
+
+        //instantiate person1
+        Name[Johny Smith]
+        Age: 18  
+        Hobbies: [cooking, reading, sports]
+        Greeting: {'Hello, I am Johnny Smith and my hobbies are cooking, reading, sports.'}
+
+        //instantiate person2
+        Name[Kate Johnson]
+        Age: 19 
+        Hobbies: [dancing, music, drawing]
+        Greeting: {'Hello, I am Kate Johnson and my hobbies are dancing, music, drawing.'}
+      </pre>
+      <p class="text">
+        *note when an object is created from a class, the class
+        <span class="snippet">constructor function</span> is run to create the
+        object. This process is called instantiation and the constructor can
+        further configure the newly created object at runtime to add it more
+        properties or change some of them in some convenient way for us.
+      </p>
+    </div>
+
+    <div class="note">
+      <p class="text center bold">Specialist classes</p>
+      <p class="text">
+        For our program we don't need regular persons, we need users and
+        gameMasters. These are just more specific types of people (so of
+        instances of the Person class). These specialised classes are known as
+        <span class="snippet">child</span> classes or
+        <span class="snippet">sub classes</span> as they can be made to
+        <span class="snippet">inherit</span> the
+        <span class="snippet">parent class</span> (in this case the Person
+        class). Furthermore, if we want additional functionality for the
+        <span class="snippet">sub-classes</span>, so some functionality that
+        does not exist in the <span class="snippet">parent class</span> we can
+        just implement it.
+      </p>
+      <p class="text">
+        Let's see what the user and gameMaster classes would look like:
+      </p>
+      <pre class="code">
+        //pseudo-code class Person
+        Name[firstName, lastName]
+        Age
+        Hobbies: []
+        Greeting: {'Hello, I am a [Name] and my hobbies are [Hobbies]'}
+
+
+        //pseudo-code class User
+        Name[firstName, lastName]
+        Age
+        Avatar
+        Hobbies: []
+        Skills: []
+        gameStatus
+        Greeting: {'Hi there, I am a [gameStatus] and my skills are [Skills]'}
+
+        //pseudo-code class gameMaster
+        Name[firstName, lastName]
+        Age
+        Avatar
+        Hobbies: []
+        Skills: []
+        gameStatus
+        Greeting: {'Greetings, I am a [gameStatus] and my role is to watch over how other game users behave'}
+      </pre>
+      <p class="text">
+        *this is very useful, both users and gameMasters share common features
+        from the Person class (such as name and age) so it is convenient to have
+        to define them only once. We can also define the same feature
+        differently in a sub class (so note how the greeting is different for
+        users and gameMasters). There is a fancy word describing how multiple
+        objects can implement the same functionality in slightly different ways
+        and that's called <span class="snippet">polymorphism</span>.
+      </p>
+    </div>
+
+    <div class="note">
+      <p class="text center bold">OOP in JavaScript</p>
+      <p class="text">
+        Finally time to get our hands dirty and play around with objects and OOP
+        in JavaScript. JavaScript uses
+        <span class="snippet">constructor functions</span> to define and
+        initialize objects and configure them. This is very useful because in
+        our applications we come across use cases where we don't know how many
+        objects we'll have to create. Constructors allow us to create as many
+        objects as needed and configure them accordingly.
+      </p>
+      <p class="text">
+        Let's see a simple example for defining a Person class using a normal
+        function:
+      </p>
+      <pre class="code">
+        function createNewPerson(name) {
+          const obj = {};
+          obj.name = name;
+          obj.greeting = function() {
+            alert(`Hello there, my name is ${name}`);
+          };
+          return obj;
+        }
+      </pre>
+      <p class="text">We can now create objects by calling this function:</p>
+      <pre class="code">
+        const myAwesomePerson = createNewPerson('Awesome');
+        myAwesomePerson.name;
+        myAwesomePerson.greeting();
+      </pre>
+      <p class="text">This works good enough for</p>
+    </div>
+    <!-- template note -->
+    <!-- <div class="note">
+    <p class="text center bold">
+      Note template Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem, vero.
+    </p>
+
+  </div> -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/scrollBookmark.js"></script>
+  </body>
+</html>
